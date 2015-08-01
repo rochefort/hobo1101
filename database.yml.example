@@ -1,0 +1,7 @@
+production:
+  encoding: utf8
+  reconnect: false
+  database: hobo1101
+  username: root
+  password:
+  host: localhost

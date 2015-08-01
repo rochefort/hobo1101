@@ -1,0 +1,11 @@
+# setup
+CREATE DATABASE hobo1101;
+USE hobo1101;
+
+CREATE TABLE darlings (
+id INT PRIMARY KEY AUTO_INCREMENT,
+date varchar(8),
+text TEXT,
+created_at DATETIME,
+update_at DATETIME
+);
