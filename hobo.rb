@@ -14,16 +14,17 @@ class Hobo
 
   def save_darling
     page = @agent.get(BASE_URL)
+    date = page.search('#head img.date').attribute('title').value
     darling = page.search('#todays_darling').text
-    save(darling)
+    save(date, darling)
   end
 
   private
 
-  def save(text)
+  def save(date, text)
     db_settings = YAML.load_file('database.yml')[@env]
     client = Mysql2::Client.new(db_settings)
-    sql = INSERT_SQL % [DateTime.now.strftime('%Y%m%d'), client.escape(text)]
+    sql = INSERT_SQL % [date, client.escape(text)]
     client.query(sql)
   rescue Mysql2::Error => e
     puts "errno: #{e.errno} message: #{e.message}"

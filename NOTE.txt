@@ -4,7 +4,7 @@ USE hobo1101;
 
 CREATE TABLE darlings (
 id INT PRIMARY KEY AUTO_INCREMENT,
-date varchar(8),
+date DATE UNIQUE,
 text TEXT,
 created_at DATETIME,
 update_at DATETIME
