@@ -28,6 +28,7 @@ class Hobo
     sql = INSERT_SQL % [date, client.escape(text)]
     client.query(sql)
   rescue Mysql2::Error => e
+    exit if e.message.include?("Duplicate entry")
     puts "errno: #{e.errno} message: #{e.message}"
     puts e.backtrace if DEBUG
   end
