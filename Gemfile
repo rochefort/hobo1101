@@ -1,5 +1,5 @@
 # A sample Gemfile
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'mechanize'
-gem 'mysql2'
+gem "mechanize"
+gem "mysql2"

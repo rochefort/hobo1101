@@ -9,3 +9,6 @@ text TEXT,
 created_at DATETIME,
 update_at DATETIME
 );
+
+# TODO:
+全文検索
