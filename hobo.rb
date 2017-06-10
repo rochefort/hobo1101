@@ -15,7 +15,7 @@ class Hobo
 
   def save_darling
     page = @agent.get(BASE_URL)
-    date = page.search('#head img.date').attribute('title').value
+    date = page.search('.header img')[0][:alt]
     darling = page.search('#todays_darling').text
     save(date, darling)
   end
